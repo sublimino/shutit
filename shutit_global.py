@@ -311,7 +311,9 @@ class ShutItGlobal(object):
 			self.shutit_print(msg)
 			self.shutit_print('\r\nResetting terminal')
 			shutit_util.sanitize_terminal()
-			shutit_util.exit_cleanup()
+			# replace interactive cleanup with terminal reset
+			os.system('reset')
+			# shutit_util.exit_cleanup()
 		sys.exit(exit_code)
 
 
